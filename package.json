@@ -4,6 +4,9 @@
   "description": "",
   "main": "./lib/index.js",
   "typings": "./src/index.ts",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "prebuild": "rimraf lib",
     "build": "tsc",
