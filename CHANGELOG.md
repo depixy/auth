@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.0.0](https://github.com/depixy/auth/compare/v2.0.0...v2.0.0) (2022-06-07)
+
+
+### Features
+
+* initial commit ([f03545c](https://github.com/depixy/auth/commit/f03545ccf9ecbb4be131922e694744c8c0b12cec))
+
+
+### Miscellaneous Chores
+
+* change release version to 2.0.0 ([cc7c424](https://github.com/depixy/auth/commit/cc7c424837a2bbb56444888164294ce6c478d8e8))
+* release 2.0.0 ([cde8611](https://github.com/depixy/auth/commit/cde8611b18661cfc30b6025165d2cb46b0dffb88))
+
 ## 2.0.0 (2022-06-07)
 
 
