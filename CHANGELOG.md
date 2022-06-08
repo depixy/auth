@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/depixy/auth/compare/v2.0.0...v2.1.0) (2022-06-08)
+
+
+### Features
+
+* add esm module support ([5d3b559](https://github.com/depixy/auth/commit/5d3b559a96a13d7c06988b4ca9c1303b492d7fd3))
+
 ## [2.0.0](https://github.com/depixy/auth/compare/v2.0.0...v2.0.0) (2022-06-07)
 
 
