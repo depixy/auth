@@ -1,2 +1,2 @@
-export * from "./jwt-handler";
-export * from "./json-web-token-handler";
+export * from "./jwt-handler.js";
+export * from "./json-web-token-handler.js";

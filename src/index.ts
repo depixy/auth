@@ -1,9 +1,9 @@
-import { plugin } from "./plugin";
+import { plugin } from "./plugin.js";
 import type {} from "@depixy/database";
 import type {} from "@fastify/cookie";
 
-export * from "./password";
-export * from "./jwt";
+export * from "./password/index.js";
+export * from "./jwt/index.js";
 
-export type { DepixyAuthOptions } from "./plugin";
+export type { DepixyAuthOptions } from "./plugin.js";
 export default plugin;

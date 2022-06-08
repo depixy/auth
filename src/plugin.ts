@@ -1,19 +1,22 @@
-import fastifyPlugin from "fastify-plugin";
+import { default as fastifyPlugin } from "fastify-plugin";
 
-import { JsonWebTokenHandler } from "./jwt";
-import { Argon2PasswordHandler } from "./password";
+import { JsonWebTokenHandler } from "./jwt/index.js";
+import { Argon2PasswordHandler } from "./password/index.js";
 import {
   clearJwtCookie,
   getJwtCookie,
   handleCookieAuth,
   handleHeaderAuth,
   setJwtCookie
-} from "./func";
+} from "./func/index.js";
 
 import type {} from "@depixy/database";
-import type { AuthContext } from "./auth-context";
-import type { Argon2PasswordHandlerOptions, PasswordHandler } from "./password";
-import type { JsonWebTokenHandlerOptions, JwtHandler } from "./jwt";
+import type { AuthContext } from "./auth-context.js";
+import type {
+  Argon2PasswordHandlerOptions,
+  PasswordHandler
+} from "./password/index.js";
+import type { JsonWebTokenHandlerOptions, JwtHandler } from "./jwt/index.js";
 
 export interface DepixyAuthOptions {
   passwordHandler?: PasswordHandler;

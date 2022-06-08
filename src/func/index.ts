@@ -1,3 +1,3 @@
-export * from "./jwt";
-export * from "./handle-cookie-auth";
-export * from "./handle-header-auth";
+export * from "./jwt.js";
+export * from "./handle-cookie-auth.js";
+export * from "./handle-header-auth.js";

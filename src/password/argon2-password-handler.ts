@@ -1,6 +1,6 @@
 import argon2 from "argon2";
 
-import type { PasswordHandler } from "./password-handler";
+import type { PasswordHandler } from "./password-handler.js";
 import type { Options as Argon2Options } from "argon2";
 
 /**

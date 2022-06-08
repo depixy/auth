@@ -1,2 +1,2 @@
-export * from "./password-handler";
-export * from "./argon2-password-handler";
+export * from "./password-handler.js";
+export * from "./argon2-password-handler.js";

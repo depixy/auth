@@ -1,7 +1,7 @@
 import jsonwebtoken from "jsonwebtoken";
 
 import type { JwtPayload, SignOptions, VerifyOptions } from "jsonwebtoken";
-import type { JwtHandler } from "./jwt-handler";
+import type { JwtHandler } from "./jwt-handler.js";
 
 export interface JsonWebTokenHandlerOptions {
   signOpts?: SignOptions;

@@ -2,15 +2,30 @@
   "name": "@depixy/auth",
   "version": "2.0.0",
   "description": "",
-  "main": "./lib/index.js",
-  "typings": "./src/index.ts",
+  "main": "./lib/cjs/index.js",
+  "typings": "./lib/cjs/index.d.ts",
+  "type": "module",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
     "prebuild": "rimraf lib",
-    "build": "tsc",
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc --module node16 --outDir lib/esm",
+    "build:cjs": "tsc --module CommonJS --outDir lib/cjs",
     "lint": "eslint --ext .ts src"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./lib/esm/index.d.ts",
+        "default": "./lib/esm/index.js"
+      },
+      "require": {
+        "types": "./lib/cjs/index.d.ts",
+        "default": "./lib/cjs/index.js"
+      }
+    }
   },
   "keywords": [
     "depixy",
@@ -37,16 +52,15 @@
     "luxon": "^2.4.0"
   },
   "devDependencies": {
-    "@depixy/database": "^2.1.0",
+    "@depixy/database": "^2.2.0",
     "@fastify/cookie": "^6.0.0",
     "@joshuaavalon/eslint-config-typescript": "^6.1.4",
     "@types/jsonwebtoken": "^8.5.8",
     "@types/luxon": "^2.3.2",
-    "@types/node": "^17.0.40",
+    "@types/node": "^16.11.39",
     "eslint": "^8.17.0",
     "fastify": "^3.29.0",
     "prettier": "^2.6.2",
-    "prisma": "^3.14.0",
     "rimraf": "^3.0.2",
     "typescript": "^4.7.3"
   }
