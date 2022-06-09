@@ -19,12 +19,9 @@ import type {
 import type { JsonWebTokenHandlerOptions, JwtHandler } from "./jwt/index.js";
 
 export interface DepixyAuthOptions {
-  passwordHandler?: PasswordHandler;
-  argon2PasswordHandlerOpts?: Argon2PasswordHandlerOptions;
-
   secret: string;
-  jwtHandler?: JwtHandler;
-  jsonWebTokenHandlerOpts?: JsonWebTokenHandlerOptions;
+  jwtHandlerOpts?: JsonWebTokenHandlerOptions;
+  passwordHandlerOpts?: Argon2PasswordHandlerOptions;
 }
 
 export const plugin = fastifyPlugin<DepixyAuthOptions>(
@@ -38,13 +35,11 @@ export const plugin = fastifyPlugin<DepixyAuthOptions>(
     fastify.decorateRequest("auth", null);
     fastify.decorate(
       "passwordHandler",
-      opts.passwordHandler ??
-        new Argon2PasswordHandler(opts.argon2PasswordHandlerOpts)
+      new Argon2PasswordHandler(opts.passwordHandlerOpts)
     );
     fastify.decorateRequest(
       "jwtHandler",
-      opts.jwtHandler ??
-        new JsonWebTokenHandler(opts.secret, opts.jsonWebTokenHandlerOpts)
+      new JsonWebTokenHandler(opts.secret, opts.jwtHandlerOpts)
     );
     fastify.addHook("preHandler", handleHeaderAuth);
     fastify.addHook("preHandler", handleCookieAuth);
