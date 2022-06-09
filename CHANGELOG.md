@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.2](https://github.com/depixy/auth/compare/v2.1.1...v2.1.2) (2022-06-09)
+
+
+### Bug Fixes
+
+* chore release ([ee713ea](https://github.com/depixy/auth/commit/ee713ea45ca00753c1c2311b0f19cc84bf638080))
+
 ## [2.1.1](https://github.com/depixy/auth/compare/v2.1.0...v2.1.1) (2022-06-09)
 
 
