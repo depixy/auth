@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.1](https://github.com/depixy/auth/compare/v2.1.0...v2.1.1) (2022-06-09)
+
+
+### Bug Fixes
+
+* update DepixyAuthOptions ([07c5bfc](https://github.com/depixy/auth/commit/07c5bfce7294ededc5f10925e9421a01a98f154a))
+
 ## [2.1.0](https://github.com/depixy/auth/compare/v2.0.0...v2.1.0) (2022-06-08)
 
 
