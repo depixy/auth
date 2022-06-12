@@ -55,15 +55,15 @@
     "luxon": "^2.4.0"
   },
   "devDependencies": {
-    "@depixy/database": "^2.2.0",
-    "@fastify/cookie": "^6.0.0",
+    "@depixy/database": "^2.2.1",
+    "@fastify/cookie": "^7.0.0",
     "@joshuaavalon/eslint-config-typescript": "^6.1.4",
     "@types/jest": "^28.1.1",
     "@types/jsonwebtoken": "^8.5.8",
     "@types/luxon": "^2.3.2",
     "@types/node": "^16.11.39",
     "eslint": "^8.17.0",
-    "fastify": "^3.29.0",
+    "fastify": "^4.0.1",
     "jest": "^28.1.1",
     "prettier": "^2.6.2",
     "rimraf": "^3.0.2",
