@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.3](https://github.com/depixy/auth/compare/v2.1.2...v2.1.3) (2022-06-12)
+
+
+### Bug Fixes
+
+* update dependencies ([88e2ac7](https://github.com/depixy/auth/commit/88e2ac768ce0af19b10b40f55df0ee02406a4e1c))
+
 ## [2.1.2](https://github.com/depixy/auth/compare/v2.1.1...v2.1.2) (2022-06-09)
 
 
