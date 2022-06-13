@@ -51,7 +51,7 @@ export const plugin = fastifyPlugin<DepixyAuthOptions>(
   {
     name: "@depixy/auth",
     dependencies: ["@fastify/cookie", "@depixy/database"],
-    fastify: "3.x"
+    fastify: "4.x"
   }
 );
 
