@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.4](https://github.com/depixy/auth/compare/v2.1.3...v2.1.4) (2022-06-13)
+
+
+### Bug Fixes
+
+* plugin fastify version ([576201a](https://github.com/depixy/auth/commit/576201a77487663055d53ee461121c8242321233))
+
 ## [2.1.3](https://github.com/depixy/auth/compare/v2.1.2...v2.1.3) (2022-06-12)
 
 
