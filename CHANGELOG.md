@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://github.com/depixy/auth/compare/v2.1.4...v2.2.0) (2022-06-17)
+
+
+### Features
+
+* export AuthContext ([2c1959d](https://github.com/depixy/auth/commit/2c1959db6b7a925cdcfa7c73ed3f77788f622f0a))
+
 ## [2.1.4](https://github.com/depixy/auth/compare/v2.1.3...v2.1.4) (2022-06-13)
 
 
