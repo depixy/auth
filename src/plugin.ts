@@ -20,8 +20,8 @@ import type { JsonWebTokenHandlerOptions, JwtHandler } from "./jwt/index.js";
 
 export interface DepixyAuthOptions {
   secret: string;
-  jwtHandlerOpts?: JsonWebTokenHandlerOptions;
-  passwordHandlerOpts?: Argon2PasswordHandlerOptions;
+  jwt?: JsonWebTokenHandlerOptions;
+  password?: Argon2PasswordHandlerOptions;
 }
 
 export const plugin = fastifyPlugin<DepixyAuthOptions>(
@@ -33,13 +33,10 @@ export const plugin = fastifyPlugin<DepixyAuthOptions>(
       throw new Error("@depixy/auth has already registered");
     }
     fastify.decorateRequest("auth", null);
-    fastify.decorate(
-      "passwordHandler",
-      new Argon2PasswordHandler(opts.passwordHandlerOpts)
-    );
+    fastify.decorate("password", new Argon2PasswordHandler(opts.password));
     fastify.decorateRequest(
-      "jwtHandler",
-      new JsonWebTokenHandler(opts.secret, opts.jwtHandlerOpts)
+      "jwt",
+      new JsonWebTokenHandler(opts.secret, opts.jwt)
     );
     fastify.addHook("preHandler", handleHeaderAuth);
     fastify.addHook("preHandler", handleCookieAuth);
@@ -57,8 +54,8 @@ export const plugin = fastifyPlugin<DepixyAuthOptions>(
 
 declare module "fastify" {
   interface FastifyInstance {
-    passwordHandler: PasswordHandler;
-    jwtHandler: JwtHandler;
+    password: PasswordHandler;
+    jwt: JwtHandler;
   }
 
   interface FastifyRequest {

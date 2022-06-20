@@ -17,7 +17,7 @@ export const handleCookieAuth: preHandlerAsyncHookHandler = async (
     return;
   }
   try {
-    const { userToken } = req.server.jwtHandler.parse(jwt);
+    const { userToken } = req.server.jwt.parse(jwt);
     if (!userToken) {
       req.log.warn({ userToken }, "Invalid cookie");
       res.clearJwtCookie();

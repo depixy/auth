@@ -29,7 +29,7 @@ export const handleHeaderAuth: preHandlerAsyncHookHandler = async (
   }
   const jwt: string = authorization.substring("Bearer ".length).trim();
   try {
-    const { userToken } = req.server.jwtHandler.parse(jwt);
+    const { userToken } = req.server.jwt.parse(jwt);
     if (!userToken) {
       req.log.warn({ userToken }, "Invalid authorization header");
       return;
