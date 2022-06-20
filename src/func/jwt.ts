@@ -8,10 +8,7 @@ const jwtKey = "depixy";
 
 export function setJwtCookie(this: FastifyReply, user: User): void {
   const fastify = this.server;
-  const jwt = fastify.jwtHandler.sign(
-    { userId: user.id },
-    { expiresIn: " 30d" }
-  );
+  const jwt = fastify.jwt.sign({ userId: user.id }, { expiresIn: " 30d" });
   const expires = DateTime.now().plus({ days: 30 });
   this.setCookie(jwtKey, jwt, {
     httpOnly: true,
