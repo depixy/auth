@@ -24,7 +24,7 @@ export const handleCookieAuth: preHandlerAsyncHookHandler = async (
       return;
     }
     const token = await req.server.db.userToken.findUnique({
-      select: { user: true },
+      select: { user: { include: { roles: true } } },
       where: { id: userToken }
     });
     if (!token) {

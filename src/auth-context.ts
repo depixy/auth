@@ -1,5 +1,5 @@
-import type { User } from "@prisma/client";
+import type { Role, User } from "@prisma/client";
 
 export interface AuthContext {
-  user: User;
+  user: User & { roles: Role[] };
 }
