@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.3.0](https://github.com/depixy/auth/compare/v2.2.0...v2.3.0) (2022-06-20)
+
+
+### Features
+
+* update jwt and password ([e47df2c](https://github.com/depixy/auth/commit/e47df2c73fc10b2cf41a4834cd6b241e99841717))
+
+
+### Bug Fixes
+
+* update @depixy/database ([39e8733](https://github.com/depixy/auth/commit/39e8733cabc68e26bbc0e521f962f3e094e452df))
+* use jwt instead of jwtHandler ([720a84c](https://github.com/depixy/auth/commit/720a84c406d4adc9fcedea52a647ac280230057e))
+
 ## [2.2.0](https://github.com/depixy/auth/compare/v2.1.4...v2.2.0) (2022-06-17)
 
 
