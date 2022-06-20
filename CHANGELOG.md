@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.0](https://github.com/depixy/auth/compare/v2.3.0...v2.4.0) (2022-06-20)
+
+
+### Features
+
+* add roles to AuthContext ([9115695](https://github.com/depixy/auth/commit/9115695ce04a32920114c0e1f0a55badc4f78b8a))
+
 ## [2.3.0](https://github.com/depixy/auth/compare/v2.2.0...v2.3.0) (2022-06-20)
 
 
