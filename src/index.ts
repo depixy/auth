@@ -3,6 +3,7 @@ import type {} from "@depixy/database";
 import type {} from "@fastify/cookie";
 
 export * from "./password/index.js";
+export * from "./permission/index.js";
 export * from "./jwt/index.js";
 export * from "./auth-context.js";
 

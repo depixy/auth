@@ -4,7 +4,7 @@ export const handleCookieAuth: preHandlerAsyncHookHandler = async (
   req,
   res
 ) => {
-  if (req.auth) {
+  if (req.auth.user) {
     req.log.debug(
       "Skipping authorization by cookie because it is already authorized."
     );
@@ -33,7 +33,7 @@ export const handleCookieAuth: preHandlerAsyncHookHandler = async (
       req.log.error({ userToken, statusCode: 403 }, "Invalid cookie");
       return;
     }
-    req.auth = { user: token.user };
+    req.auth.user = token.user;
   } catch (e) {
     req.log.warn(e);
   }
