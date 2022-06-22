@@ -13,9 +13,12 @@ jobs:
           node-version: 16
       - run: npm ci
       - run: npm run lint
-  test-esm:
-    name: test:esm
+  test:
+    name: test
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        type: [esm, cjs]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -23,15 +26,4 @@ jobs:
           node-version: 16
       - run: npm ci
       - run: npm run build
-      - run: npm run test:esm
-  test-cjs:
-    name: test:cjs
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - run: npm ci
-      - run: npm run build
-      - run: npm run test:cjs
+      - run: npm run test:${{ matrix.type }}
