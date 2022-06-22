@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.0](https://github.com/depixy/auth/compare/v2.4.0...v2.5.0) (2022-06-21)
+
+
+### Features
+
+* add permission ([e48969e](https://github.com/depixy/auth/commit/e48969ec4ae3470529d24ad78bbb2f2d900bfd61))
+
 ## [2.4.0](https://github.com/depixy/auth/compare/v2.3.0...v2.4.0) (2022-06-20)
 
 
