@@ -19,6 +19,7 @@ import type {
   PasswordHandler
 } from "./password/index.js";
 import type { JsonWebTokenHandlerOptions, JwtHandler } from "./jwt/index.js";
+import type { Permission } from "./permission/index.js";
 
 export interface DepixyAuthOptions {
   secret: string;
@@ -34,13 +35,16 @@ export const plugin = fastifyPlugin<DepixyAuthOptions>(
     if (fastify.hasRequestDecorator("auth")) {
       throw new Error("@depixy/auth has already registered");
     }
-    fastify.decorateRequest("auth", {});
+    fastify.decorateRequest("auth", null);
     fastify.decorate("password", new Argon2PasswordHandler(opts.password));
     fastify.decorate("permission", new PermissionHandler());
-    fastify.decorateRequest(
-      "jwt",
-      new JsonWebTokenHandler(opts.secret, opts.jwt)
-    );
+    fastify.decorate("jwt", new JsonWebTokenHandler(opts.secret, opts.jwt));
+    fastify.addHook("onRequest", async req => {
+      req.auth = {
+        hasPermission: (subject: string | symbol, permission: Permission) =>
+          req.server.permission.has(null, subject, permission)
+      };
+    });
     fastify.addHook("preHandler", handleHeaderAuth);
     fastify.addHook("preHandler", handleCookieAuth);
     fastify.addHook("preHandler", handleAuth);
