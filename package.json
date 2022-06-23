@@ -2,31 +2,23 @@
   "name": "@depixy/auth",
   "version": "2.5.0",
   "description": "",
-  "main": "./lib/cjs/index.js",
-  "typings": "./lib/cjs/index.d.ts",
+  "main": "./lib/index.js",
+  "typings": "./lib/index.d.ts",
   "type": "module",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
     "prebuild": "rimraf lib",
-    "build": "npm run build:esm && npm run build:cjs",
-    "build:esm": "tsc --module node16 --outDir lib/esm",
-    "build:cjs": "tsc --module CommonJS --outDir lib/cjs",
+    "build": "tsc",
     "lint": "eslint --ext .ts src",
-    "test": "npm run test:esm && npm run test:cjs",
-    "test:esm": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config jest.esm.config.js",
-    "test:cjs": "jest --config jest.cjs.config.js"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "exports": {
     ".": {
       "import": {
-        "types": "./lib/esm/index.d.ts",
-        "default": "./lib/esm/index.js"
-      },
-      "require": {
-        "types": "./lib/cjs/index.d.ts",
-        "default": "./lib/cjs/index.js"
+        "types": "./lib/index.d.ts",
+        "default": "./lib/index.js"
       }
     }
   },
@@ -55,7 +47,7 @@
     "luxon": "^2.4.0"
   },
   "devDependencies": {
-    "@depixy/database": "^2.3.1",
+    "@depixy/database": "^2.4.0",
     "@fastify/cookie": "^7.0.0",
     "@joshuaavalon/eslint-config-typescript": "^6.1.4",
     "@types/jest": "^28.1.1",
