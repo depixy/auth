@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.6.0](https://github.com/depixy/auth/compare/v2.5.0...v2.6.0) (2022-06-23)
+
+
+### Features
+
+* esm module ([ad41789](https://github.com/depixy/auth/commit/ad417898244cc3b39269bef1640d6749af6c647b))
+
+
+### Bug Fixes
+
+* decorating with a reference type ([976b9e7](https://github.com/depixy/auth/commit/976b9e7bcf84029414b2f70dd829be1ae04c353a))
+
 ## [2.5.0](https://github.com/depixy/auth/compare/v2.4.0...v2.5.0) (2022-06-21)
 
 
