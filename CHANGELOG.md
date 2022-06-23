@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.1](https://github.com/depixy/auth/compare/v2.6.0...v2.6.1) (2022-06-23)
+
+
+### Bug Fixes
+
+* expiresIn leading space ([5b9aa93](https://github.com/depixy/auth/commit/5b9aa937b5a9e756b13cda700d4fbcdb7606ee55))
+
 ## [2.6.0](https://github.com/depixy/auth/compare/v2.5.0...v2.6.0) (2022-06-23)
 
 
