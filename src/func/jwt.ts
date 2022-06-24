@@ -10,28 +10,20 @@ export interface AuthJwtPayload {
   userToken: string;
 }
 
-export interface SetJwtCookieOptions {
-  /**
-   * Unit day
-   */
-  expiresIn?: number;
-}
-
-export function setJwtCookie(
-  this: FastifyReply,
-  userToken: UserToken,
-  opts: SetJwtCookieOptions = {}
-): void {
+export function setJwtCookie(this: FastifyReply, userToken: UserToken): void {
   const fastify = this.server;
   const payload: AuthJwtPayload = { userToken: userToken.id };
-  const { expiresIn = 30 } = opts;
-  const jwt = fastify.jwt.sign(payload, {
-    expiresIn: expiresIn > 0 ? expiresIn + "d" : undefined
-  });
-  const expires =
-    expiresIn > 0
-      ? DateTime.now().plus({ days: expiresIn }).toJSDate()
-      : undefined;
+  let expires: Date | undefined;
+  let expiresIn: string | undefined;
+  if (userToken.expiredOn) {
+    expires = userToken.expiredOn;
+    const expiredOnDateTime = DateTime.fromJSDate(userToken.expiredOn);
+    const days = DateTime.now().diff(expiredOnDateTime).days + 1;
+    if (days > 0) {
+      expiresIn = days + "d";
+    }
+  }
+  const jwt = fastify.jwt.sign(payload, { expiresIn });
   this.setCookie(jwtKey, jwt, {
     httpOnly: true,
     signed: true,
