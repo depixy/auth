@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.7.0](https://github.com/depixy/auth/compare/v2.6.1...v2.7.0) (2022-06-24)
+
+
+### Features
+
+* add expires ([428c9c1](https://github.com/depixy/auth/commit/428c9c1558be3e4d98dace2796ad2fe98cb39dca))
+
 ## [2.6.1](https://github.com/depixy/auth/compare/v2.6.0...v2.6.1) (2022-06-23)
 
 
