@@ -1,5 +1,7 @@
 import type { preHandlerAsyncHookHandler } from "fastify";
 
+import type { AuthJwtPayload } from "./jwt.js";
+
 export const handleHeaderAuth: preHandlerAsyncHookHandler = async (
   req,
   res
@@ -29,7 +31,7 @@ export const handleHeaderAuth: preHandlerAsyncHookHandler = async (
   }
   const jwt: string = authorization.substring("Bearer ".length).trim();
   try {
-    const { userToken } = req.server.jwt.parse(jwt);
+    const { userToken }: AuthJwtPayload = req.server.jwt.parse(jwt);
     if (!userToken) {
       req.log.warn({ userToken }, "Invalid authorization header");
       return;

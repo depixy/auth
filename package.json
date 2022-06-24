@@ -47,7 +47,7 @@
     "luxon": "^2.4.0"
   },
   "devDependencies": {
-    "@depixy/database": "^2.4.0",
+    "@depixy/database": "^2.5.0",
     "@fastify/cookie": "^7.0.0",
     "@joshuaavalon/eslint-config-typescript": "^6.1.4",
     "@types/jest": "^28.1.1",

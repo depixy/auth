@@ -1,5 +1,7 @@
 import type { preHandlerAsyncHookHandler } from "fastify";
 
+import type { AuthJwtPayload } from "./jwt.js";
+
 export const handleCookieAuth: preHandlerAsyncHookHandler = async (
   req,
   res
@@ -17,7 +19,7 @@ export const handleCookieAuth: preHandlerAsyncHookHandler = async (
     return;
   }
   try {
-    const { userToken } = req.server.jwt.parse(jwt);
+    const { userToken }: AuthJwtPayload = req.server.jwt.parse(jwt);
     if (!userToken) {
       req.log.warn({ userToken }, "Invalid cookie");
       res.clearJwtCookie();
