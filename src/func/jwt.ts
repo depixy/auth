@@ -26,7 +26,6 @@ export function setJwtCookie(this: FastifyReply, userToken: UserToken): void {
   const jwt = fastify.jwt.sign(payload, { expiresIn });
   this.setCookie(jwtKey, jwt, {
     httpOnly: true,
-    signed: true,
     expires
   });
 }
