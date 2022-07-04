@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.7.1](https://github.com/depixy/auth/compare/v2.7.0...v2.7.1) (2022-07-04)
+
+
+### Bug Fixes
+
+* calculate expire from userToken ([389c635](https://github.com/depixy/auth/commit/389c635891e0cef4969eb95f4a7e28f92a9b208a))
+* remove double signing ([24f8737](https://github.com/depixy/auth/commit/24f87377358cf9f9e34e2c41f982ab4d0c4f1ee5))
+
 ## [2.7.0](https://github.com/depixy/auth/compare/v2.6.1...v2.7.0) (2022-06-24)
 
 
