@@ -2,11 +2,9 @@ import { default as fastifyPlugin } from "fastify-plugin";
 
 import { JsonWebTokenHandler } from "./jwt/index.js";
 import { Argon2PasswordHandler } from "./password/index.js";
-import { PermissionHandler } from "./permission/index.js";
 import {
   clearJwtCookie,
   getJwtCookie,
-  handleAuth,
   handleCookieAuth,
   handleHeaderAuth,
   setJwtCookie
@@ -19,7 +17,6 @@ import type {
   PasswordHandler
 } from "./password/index.js";
 import type { JsonWebTokenHandlerOptions, JwtHandler } from "./jwt/index.js";
-import type { Permission } from "./permission/index.js";
 
 export interface DepixyAuthOptions {
   secret: string;
@@ -37,17 +34,12 @@ export const plugin = fastifyPlugin<DepixyAuthOptions>(
     }
     fastify.decorateRequest("auth", null);
     fastify.decorate("password", new Argon2PasswordHandler(opts.password));
-    fastify.decorate("permission", new PermissionHandler());
     fastify.decorate("jwt", new JsonWebTokenHandler(opts.secret, opts.jwt));
     fastify.addHook("onRequest", async req => {
-      req.auth = {
-        hasPermission: (subject: string | symbol, permission: Permission) =>
-          req.server.permission.has(null, subject, permission)
-      };
+      req.auth = {};
     });
     fastify.addHook("preHandler", handleHeaderAuth);
     fastify.addHook("preHandler", handleCookieAuth);
-    fastify.addHook("preHandler", handleAuth);
 
     fastify.decorateRequest("getJwtCookie", getJwtCookie);
     fastify.decorateReply("clearJwtCookie", clearJwtCookie);
@@ -64,7 +56,6 @@ declare module "fastify" {
   interface FastifyInstance {
     password: PasswordHandler;
     jwt: JwtHandler;
-    permission: PermissionHandler;
   }
 
   interface FastifyRequest {
