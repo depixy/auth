@@ -30,9 +30,8 @@ export const handleCookieAuth: preHandlerAsyncHookHandler = async (
       where: { id: userToken }
     });
     if (!token) {
-      res.code(403);
-      res.send("Invalid cookie");
-      req.log.error({ userToken, statusCode: 403 }, "Invalid cookie");
+      req.log.warn({ userToken }, "Invalid cookie");
+      res.clearJwtCookie();
       return;
     }
     req.auth.user = token.user;

@@ -41,12 +41,7 @@ export const handleHeaderAuth: preHandlerAsyncHookHandler = async (
       where: { id: userToken }
     });
     if (!token) {
-      res.code(403);
-      res.send("Invalid authorization header");
-      req.log.error(
-        { userToken, statusCode: 403 },
-        "Invalid authorization header"
-      );
+      req.log.warn({ userToken }, "Invalid authorization header");
       return;
     }
     req.auth.user = token.user;
