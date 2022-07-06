@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.8.0](https://github.com/depixy/auth/compare/v2.7.1...v2.8.0) (2022-07-06)
+
+
+### Features
+
+* remove permission ([f7f1790](https://github.com/depixy/auth/commit/f7f17901d38ae9c2b66f94383630e213233f8412))
+
+
+### Bug Fixes
+
+* not reject during auth ([dd1e29c](https://github.com/depixy/auth/commit/dd1e29c7199c645911905770d8b393bd5e3cd2a5))
+
 ## [2.7.1](https://github.com/depixy/auth/compare/v2.7.0...v2.7.1) (2022-07-04)
 
 
